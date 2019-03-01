@@ -52,6 +52,7 @@ def get_product_list(path, products, page_id):
         start_time = time()
         try:
             product_path = "https://fjallakofinn.is{}".format(anchor.attrs['href'].encode('utf-8'))
+            print("Fetching path {} with page_id {} ...").format(product_path,page_id)
             products.append(get_product(product_path, page_id))
         except BaseException, ex:
             print("FAILED TO GET \n{} :: {}".format(
